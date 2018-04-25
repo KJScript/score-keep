@@ -7,6 +7,8 @@ export default class AddPlayer extends React.Component {
 
     e.preventDefault();
 
+    if (Players.find().count() + 1 > 8) {return}
+
     if (playerName) {
       e.target.playerName.value = '';
       Players.insert({
